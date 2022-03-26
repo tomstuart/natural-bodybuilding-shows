@@ -30,7 +30,7 @@ response = Net::HTTP.get_response(uri)
 return unless response.is_a?(Net::HTTPSuccess)
 
 html = Nokogiri::HTML(response.body)
-events = html.xpath("//div[@class='menu-all-events-container']").at_xpath("//ul[@id='menu-all-events']").children.children
+events = html.xpath("//div[@class='menu-all-events-container']").xpath("//ul[@id='menu-all-events']").children.children
 
 all_wnbf_events = {}
 events.each do |event|
