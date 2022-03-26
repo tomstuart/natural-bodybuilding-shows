@@ -35,7 +35,7 @@ events = html.xpath("//ul[@id='menu-all-events']/li/a")
 all_wnbf_events = {}
 events.each do |event|
   # Get the two fields we need
-  event_link = event.attributes["href"].value
+  event_link = event["href"]
   event_label = event.children.text
 
   # The event label contains date, event name and state
